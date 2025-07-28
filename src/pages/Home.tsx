@@ -5,14 +5,16 @@ import { AboutSection } from "../components/AboutSection";
 import { SkillsSection } from "../components/SkillSection";
 import { ProjectsSection } from "../components/ProjectsSection ";
 import { JourneySection } from "../components/JourneySection ";
-import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/FooterSection";
+import { ContactSection } from "../components/ContactSection";
 
 export const Home = () => {
   return (
     <div className="min-h-screen bg-backgeround text-foreground overflow-x-hidden">
         {/* Theme Toggle */}
-      
+        
+
+
         {/* Background Effects */}
 
         <StarBackground/>
