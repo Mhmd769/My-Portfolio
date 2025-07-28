@@ -1,8 +1,18 @@
-import { ArrowRight, Github } from "lucide-react";
-import * as Dialog from "@radix-ui/react-dialog";
+import { ArrowRight, Github, X } from "lucide-react";
 import { useState } from "react";
 
-const projects = [
+// Define project type
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoUrl: string;
+  githubUrl: string;
+};
+
+const projects: Project[] = [
   {
     id: 1,
     title: "ECommerce Microservices",
@@ -31,34 +41,36 @@ const projects = [
     image: "/Leave.png",
     tags: ["ASP.NET Core", "Clean Architecture", "JWT", "XUnit"],
     demoUrl: "#",
-    githubUrl:
-      "https://github.com/Mhmd769/Clean-Architecture-LeaveMangement.git",
+    githubUrl: "https://github.com/Mhmd769/Clean-Architecture-LeaveMangement.git",
   },
 ];
 
 export const ProjectsSection = () => {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  // ✅ Fix: Union type
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
-        </h2>
+    <section id="projects" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+      <div className="w-full max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+            Featured <span className="text-primary">Projects</span>
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg text-foreground/70 max-w-2xl mx-auto px-4">
+            Here are some of my recent projects. Click any card to view more details.
+          </p>
+        </div>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Click any card to view more
-          details.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover relative cursor-pointer"
+              className="group bg-card rounded-lg overflow-hidden shadow-sm card-hover relative cursor-pointer border border-border"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-40 sm:h-48 lg:h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -66,97 +78,125 @@ export const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-6 pb-12">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
+              <div className="p-4 sm:p-5 lg:p-6 pb-12 sm:pb-14">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                  {project.tags.slice(0, 3).map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/10 text-primary border-primary/20"
                     >
                       {tag}
                     </span>
                   ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/10 text-primary border-primary/20">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description.substring(0, 80)}...
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2">
+                  {project.title}
+                </h3>
+                <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                  {project.description.length > 100
+                    ? `${project.description.substring(0, 100)}...`
+                    : project.description}
                 </p>
               </div>
 
-              {/* GitHub icon pinned */}
               <div className="absolute bottom-3 right-3">
                 <a
                   href={project.githubUrl}
                   target="_blank"
-                  onClick={(e) => e.stopPropagation()} // prevent opening modal
-                  className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-2 text-foreground/60 hover:text-primary transition-colors duration-300 hover:bg-primary/10 rounded-full"
                 >
-                  <Github size={24} />
+                  <Github className="h-5 w-5" />
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Modal Dialog */}
-        <Dialog.Root open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <Dialog.Portal>
-            <Dialog.Overlay className="fixed inset-0 bg-black/60 z-50" />
-            <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-card p-6 rounded-lg shadow-lg w-[90%] max-w-2xl z-50">
-              {selectedProject && (
-                <>
-                  <Dialog.Title className="text-2xl font-bold mb-4">
-                    {selectedProject.title}
-                  </Dialog.Title>
+        {/* Modal */}
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setSelectedProject(null)}
+            />
+            <div className="relative bg-card rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-border">
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-3 right-3 z-10 p-2 text-foreground/60 hover:text-foreground bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              <div className="p-4 sm:p-6">
+                <h2 className="text-xl sm:text-2xl font-bold mb-4 pr-10">{selectedProject.title}</h2>
+                <div className="w-full h-48 sm:h-64 rounded-lg overflow-hidden mb-4">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-64 object-cover rounded-lg mb-4"
+                    className="w-full h-full object-cover"
                   />
-                  <p className="text-muted-foreground mb-4">
-                    {selectedProject.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {selectedProject.tags.map((tag: string, index: number) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-4">
-                    <a
-                      href={selectedProject.githubUrl}
-                      target="_blank"
-                      className="bg-muted px-4 py-2 rounded-md flex items-center gap-2 hover:bg-muted/80"
+                </div>
+                <p className="text-foreground/80 text-sm sm:text-base leading-relaxed mb-4">
+                  {selectedProject.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {selectedProject.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/10 text-primary border-primary/20"
                     >
-                      <Github size={16} />
-                      View Code
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/10 text-primary border border-primary/20 rounded-lg hover:bg-primary/20 transition-colors text-sm font-medium"
+                  >
+                    <Github className="h-4 w-4" />
+                    View Code
+                  </a>
+                  {selectedProject.demoUrl !== "#" && (
+                    <a
+                      href={selectedProject.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 cosmic-button text-sm"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                      Live Demo
                     </a>
-                  </div>
-                </>
-              )}
-              <Dialog.Close className=" absolute top-3 right-3 text-white bg-black/30 rounded-full px-2 py-1 hover:bg-black/50">
-                ✕
-              </Dialog.Close>
-            </Dialog.Content>
-          </Dialog.Portal>
-        </Dialog.Root>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cosmic-button inline-flex items-center gap-2 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/Mhmd769"
           >
-            Check My Github +10 <ArrowRight size={16} />
+            Check My Github +10
+            <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </div>
     </section>
   );
 };
+
+export default ProjectsSection;
