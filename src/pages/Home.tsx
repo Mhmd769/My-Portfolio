@@ -4,6 +4,9 @@ import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { SkillsSection } from "../components/SkillSection";
 import { ProjectsSection } from "../components/ProjectsSection ";
+import { JourneySection } from "../components/JourneySection ";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/FooterSection";
 
 export const Home = () => {
   return (
@@ -23,10 +26,12 @@ export const Home = () => {
           <HeroSection />
           <AboutSection />
           <SkillsSection />
+          <JourneySection />
           <ProjectsSection />
+          <ContactSection />
         </main>
         {/* Footer */}
-
+        <Footer />
     </div>
   );
 }
