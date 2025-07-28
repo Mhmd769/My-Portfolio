@@ -21,9 +21,8 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies.
-            Specializing in front-end development, I build interfaces that are
-            both beautiful and functional.
+            Fullstack Web Developer skilled in React.js and ASP.NET Core. I focus on creating scalable,
+            efficient, and user-centric applications with clean, maintainable code.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

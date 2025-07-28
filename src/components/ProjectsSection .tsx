@@ -3,32 +3,32 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
+    title: "ECommerce Microservices",
+    description: "Built a scalable eCommerce system using .NET 8, ASP.NET Web API, Ocelot API Gateway, and SQL Server…",
+    image: "/public/ecommerce-microservices-architecture.webp",
+    tags: ["ASP.NET", "Web API", " Ocelot API Gateway" , "SQL Server"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Mhmd769/Ecommerce-Microservices-.git",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Resume-AI Generator",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+      "Created an AI-powered resume builder with React.js and Strapi, enabling users to easily generate, edit, and securely share resumes…",
+    image: "/public/ai.jpg",
+    tags: ["React.js", "Tailwind CSS", "PostgreSQL", "Strapi CMS","Gemini API"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Mhmd769/Resume_AI.git",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "HR Leave Management System",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+      "Developed using ASP.NET Core with SOLID principles and Clean Architecture for maintainable and scalable code. Utilized...",
+    image: "/public/Leave.png",
+    tags: ["ASP.NET Core", "Clean Architecture", "JWT" , "XUnit"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Mhmd769/Clean-Architecture-LeaveMangement.git",
   },
 ];
 
@@ -50,7 +50,7 @@ export const ProjectsSection = () => {
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover relative" // ✅ Added relative
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -60,37 +60,33 @@ export const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 pb-12"> {/* Added bottom padding so icon won't overlap */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag, index) => (
+                    <span 
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
-                </div>
+              </div>
+
+              {/* ✅ GitHub icon pinned to bottom-right */}
+              <div className="absolute bottom-3 right-3">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                >
+                  <Github size={24} />
+                </a>
               </div>
             </div>
           ))}
@@ -100,9 +96,9 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/Mhmd769"
           >
-            Check My Github <ArrowRight size={16} />
+            Check My Github +10 <ArrowRight size={16} />
           </a>
         </div>
       </div>

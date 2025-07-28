@@ -85,7 +85,7 @@ export const ContactSection = () => {
                         <div className="pt-8">
                             <h4 className="font-medium mb-4">Connect With Me</h4>
                             <div className="flex space-x-4 justify-center">
-                                <a href="#" target="_blank">
+                                <a href="https://linkedin.com/in/mhmdmahdi20" target="_blank">
                                     <Linkedin/>
                                 </a>
                                 <a href="#" target="_blank">
@@ -94,7 +94,7 @@ export const ContactSection = () => {
                                 <a href="#" target="_blank">
                                     <Twitter/>
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="https://github.com/Mhmd769" target="_blank">
                                     <Github/>
                                 </a>
                             </div>
