@@ -235,7 +235,7 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
                 "font-extrabold tracking-tight",
                 isDarkMode ? "text-white" : "text-gray-900"
               )}>
-                Mhmd
+                Mohammad
               </span>{" "}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Mahdi

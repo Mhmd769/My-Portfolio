@@ -42,8 +42,8 @@ export const AboutSection = () => {
                                 <Code className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-lg font-semibold">Web Development</h4>
-                                <p className="text-muted-foreground">Building responsive and dynamic websites.</p>
+                                <h4 className="text-lg font-semibold"> Full-Stack Software Development</h4>
+                                <p className="text-muted-foreground">Building scalable web applications with React.js, ASP.NET Core, and MVC architecture.</p>
                             </div>
                         </div>
                     </div>
@@ -54,8 +54,8 @@ export const AboutSection = () => {
                                 <User className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="text-lg font-semibold">UI/UX Design</h4>
-                                <p className="text-muted-foreground">Designing intutive user interfaces and seamles user experience</p>
+                                <h4 className="text-lg font-semibold">Interactive Dashboards & UI</h4>
+                                <p className="text-muted-foreground">Created real-time dashboards and improved UI using Chart.js, Tailwind CSS, and DataTables.</p>
                             </div>
                         </div>
                     </div>
@@ -67,10 +67,9 @@ export const AboutSection = () => {
                             </div>
 
                             <div className="text-left">
-                                  <h4 className="font-semibold text-lg">Project Management</h4>
+                                  <h4 className="font-semibold text-lg">Agile Team Collaboration</h4>
                                 <p className="text-muted-foreground">
-                                    Leading projects from conception to completion with agile
-                                    methodologies.
+                                    Worked in agile teams, contributing to project planning and smooth development cycles.
                                 </p>
                             </div>
                         </div>
