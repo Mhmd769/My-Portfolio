@@ -1,6 +1,6 @@
 import { cn } from "../lib/utils";
 
-import { Github, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter, Menu, X, Code2, Sparkles, Moon, Sun } from "lucide-react";
+import { Menu, X, Code2, Sparkles, Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // Theme Toggle Component
