@@ -42,7 +42,7 @@ export const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="space-y-6 sm:space-y-8">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
+            <h3 className="text-left text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
               Contact Information
             </h3>
 
@@ -53,7 +53,7 @@ export const ContactSection = () => {
                   <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-medium text-sm sm:text-base mb-1">Email</h4>
+                  <h4 className="text-left font-medium text-sm sm:text-base mb-1">Email</h4>
                   <a
                     href="mailto:mhmdmahdi058@gmail.com"
                     className="text-foreground/70 hover:text-primary transition-colors text-sm sm:text-base break-all"
@@ -69,7 +69,7 @@ export const ContactSection = () => {
                   <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-medium text-sm sm:text-base mb-1">Phone</h4>
+                  <h4 className="text-left font-medium text-sm sm:text-base mb-1">Phone</h4>
                   <a
                     href="tel:+96176931179"
                     className="text-foreground/70 hover:text-primary transition-colors text-sm sm:text-base"
@@ -85,8 +85,8 @@ export const ContactSection = () => {
                   <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-medium text-sm sm:text-base mb-1">Location</h4>
-                  <span className="text-foreground/70 text-sm sm:text-base">
+                  <h4 className="text-left font-medium text-sm sm:text-base mb-1">Location</h4>
+                  <span className="text-left text-foreground/70 text-sm sm:text-base">
                     Beirut, Lebanon
                   </span>
                 </div>
@@ -95,8 +95,8 @@ export const ContactSection = () => {
 
             {/* Social Links */}
             <div className="pt-6 sm:pt-8">
-              <h4 className="font-medium mb-4 text-sm sm:text-base">Connect With Me</h4>
-              <div className="flex gap-3 sm:gap-4">
+              <h4 className="font-medium mb-4 text-sm sm:text-base">Connect With Me :</h4>
+              <div className="flex justify-center gap-3 sm:gap-4">
                 <a
                   href="https://linkedin.com/in/mhmdmahdi20"
                   target="_blank"

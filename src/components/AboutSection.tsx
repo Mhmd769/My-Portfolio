@@ -10,16 +10,16 @@ export const AboutSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 {/* Text Content - Left Column */}
                 <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold">
+                    <h3 className="text-left text-xl sm:text-2xl lg:text-3xl font-semibold">
                         Passionate Full-stack Software Developer
                     </h3>
                     
-                    <p className="text-sm sm:text-base lg:text-lg text-foreground/80 leading-relaxed">
+                    <p className="text-sm text-left sm:text-base lg:text-lg text-foreground/80 leading-relaxed">
                        I am a full-stack software developer with strong experience building scalable web applications using React.js, ASP.NET Core, and MVC architecture. 
                        I have a keen interest in clean code principles, microservice architectures, and continuous learning of cutting-edge technologies.
                     </p> 
 
-                    <p className="text-sm sm:text-base lg:text-lg text-foreground/80 leading-relaxed">
+                    <p className="text-sm text-left sm:text-base lg:text-lg text-foreground/80 leading-relaxed">
                     I hold a Bachelor's degree in Computer Science from Lebanese University and completed an internship where I gained practical experience in full-stack development.
                     I thrive in collaborative teams and proactively solve complex problems.
                     </p>
@@ -47,10 +47,10 @@ export const AboutSection = () => {
                                 <Code className="h-5 w-5 sm:h-6 sm:w-6 text-primary"/>
                             </div>
                             <div className="flex-1 min-w-0">
-                                <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">
+                                <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-left">
                                     Full-Stack Software Development
                                 </h4>
-                                <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                                <p className="text-left text-sm sm:text-base text-foreground/70 leading-relaxed">
                                     Building scalable web applications with React.js, ASP.NET Core, and MVC architecture.
                                 </p>
                             </div>
@@ -63,10 +63,10 @@ export const AboutSection = () => {
                                 <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary"/>
                             </div>
                             <div className="flex-1 min-w-0">
-                                <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">
+                                <h4 className="text-left  text-base sm:text-lg font-semibold mb-1 sm:mb-2">
                                     Interactive Dashboards & UI
                                 </h4>
-                                <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                                <p className="text-left  text-sm sm:text-base text-foreground/70 leading-relaxed">
                                     Created real-time dashboards and improved UI using Chart.js, Tailwind CSS, and DataTables.
                                 </p>
                             </div>
@@ -79,10 +79,10 @@ export const AboutSection = () => {
                                 <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary"/>
                             </div>
                             <div className="flex-1 min-w-0">
-                                <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">
+                                <h4 className="text-left text-base sm:text-lg font-semibold mb-1 sm:mb-2">
                                     Agile Team Collaboration
                                 </h4>
-                                <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                                <p className="text-left text-sm sm:text-base text-foreground/70 leading-relaxed">
                                     Worked in agile teams, contributing to project planning and smooth development cycles.
                                 </p>
                             </div>

@@ -16,16 +16,16 @@ const SkillCard = ({ icon: Icon, title, description, skills, iconColor = "text-b
         <div className={`p-3 rounded-lg bg-background mr-4 border border-border/50`}>
           <Icon className={`h-8 w-8 ${iconColor}`} />
         </div>
-        <h3 className="text-xl font-bold text-foreground">{title}</h3>
+        <h3 className="text-xl text-left font-bold text-foreground">{title}</h3>
       </div>
       
-      <p className="text-foreground/70 mb-4 text-sm">{description}</p>
+      <p className="text-left text-foreground/70 mb-4 text-sm">{description}</p>
       
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
           <span
             key={index}
-            className="px-3 py-1 bg-background text-foreground/80 rounded-full text-sm border border-border hover:border-primary/50 transition-colors"
+            className="px-2 py-1 bg-background text-foreground/80 rounded-full text-sm border border-border hover:border-primary/50 transition-colors"
           >
             {skill}
           </span>

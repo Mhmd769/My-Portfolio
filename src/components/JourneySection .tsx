@@ -25,7 +25,7 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">{title}</h3>
-              <p className="text-primary font-medium">@{company}</p>
+              <p className="text-left text-primary font-medium">@{company}</p>
             </div>
           </div>
           
@@ -46,7 +46,7 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
         </div>
       </div>
 
-      <p className="text-foreground/80 mb-4 leading-relaxed">{description}</p>
+      <p className=" text-left text-foreground/80 mb-4 leading-relaxed">{description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {skills.map((skill, index) => (

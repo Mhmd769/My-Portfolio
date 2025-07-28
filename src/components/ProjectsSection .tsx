@@ -95,10 +95,10 @@ export const ProjectsSection = () => {
                   )}
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2">
+                <h3 className="text-left text-lg sm:text-xl font-semibold mb-2 line-clamp-2">
                   {project.title}
                 </h3>
-                <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                <p className="text-left  text-foreground/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
                   {project.description.length > 100
                     ? `${project.description.substring(0, 100)}...`
                     : project.description}
@@ -135,7 +135,7 @@ export const ProjectsSection = () => {
                 <X className="h-4 w-4" />
               </button>
               <div className="p-4 sm:p-6">
-                <h2 className="text-xl sm:text-2xl font-bold mb-4 pr-10">{selectedProject.title}</h2>
+                <h2 className="text-left text-xl sm:text-2xl font-bold mb-4 pr-10">{selectedProject.title}</h2>
                 <div className="w-full h-48 sm:h-64 rounded-lg overflow-hidden mb-4">
                   <img
                     src={selectedProject.image}
@@ -143,7 +143,7 @@ export const ProjectsSection = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-foreground/80 text-sm sm:text-base leading-relaxed mb-4">
+                <p className="text-left text-foreground/80 text-sm sm:text-base leading-relaxed mb-4">
                   {selectedProject.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
