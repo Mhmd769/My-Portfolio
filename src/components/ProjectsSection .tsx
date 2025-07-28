@@ -8,7 +8,7 @@ const projects = [
     title: "ECommerce Microservices",
     description:
       "Built a scalable eCommerce platform using .NET 8, ASP.NET Web API, Ocelot API Gateway, and SQL Server. Designed microservices for Product, Order, and Authentication based on Clean Architecture with JWT authentication. Configured Ocelot for routing, authentication, and rate limiting, and implemented caching and retry policies to ensure performance and resilience. Conducted thorough unit and integration testing with xUnit.",
-    image: "/public/ecommerce-microservices-architecture.webp",
+    image: "/ecommerce-microservices-architecture.webp",
     tags: ["ASP.NET", "Web API", "Ocelot API Gateway", "SQL Server"],
     demoUrl: "#",
     githubUrl: "https://github.com/Mhmd769/Ecommerce-Microservices-.git",
@@ -18,7 +18,7 @@ const projects = [
     title: "Resume-AI Generator",
     description:
       "Developed an AI-powered resume builder using React.js, Tailwind CSS, and Clerk for secure user authentication. The backend is built with Strapi CMS and PostgreSQL, integrating Google Gemini API to generate dynamic, personalized content. Key features include creating, editing, AI content generation, secure sharing, and downloading resumes.",
-    image: "/public/ai.jpg",
+    image: "/ai.jpg",
     tags: ["React.js", "Tailwind CSS", "PostgreSQL", "Strapi CMS", "Gemini API"],
     demoUrl: "#",
     githubUrl: "https://github.com/Mhmd769/Resume_AI.git",
@@ -28,7 +28,7 @@ const projects = [
     title: "Leave Management System",
     description:
       "Developed using ASP.NET Core with SOLID principles and Clean Architecture for maintainable and scalable code. Utilized MediatR, Automapper, and Fluent API for streamlined operations and efficient workflows. Implemented the CQRS pattern and secured the API with Identity and JWT for user authentication and authorization. Conducted comprehensive unit testing with xUnit to ensure system reliability and robustness.",
-    image: "/public/Leave.png",
+    image: "/Leave.png",
     tags: ["ASP.NET Core", "Clean Architecture", "JWT", "XUnit"],
     demoUrl: "#",
     githubUrl:
