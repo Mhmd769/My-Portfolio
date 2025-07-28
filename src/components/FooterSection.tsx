@@ -1,4 +1,4 @@
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp} from "lucide-react";
 
 export const Footer = () => {
   return (
