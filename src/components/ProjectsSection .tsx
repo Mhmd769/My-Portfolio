@@ -105,17 +105,17 @@ export const ProjectsSection = () => {
                 </p>
               </div>
 
-              <div className="absolute bottom-3 right-3">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="p-2 text-foreground/60 hover:text-primary transition-colors duration-300 hover:bg-primary/10 rounded-full"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              </div>
+              <div className="flex justify-end items-center p-2">
+                  <div className="flex space-x-3 ">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <Github size={20} />
+                    </a>
+                  </div>
+                </div>
             </div>
           ))}
         </div>

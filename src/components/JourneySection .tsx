@@ -43,32 +43,35 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      {/* Timeline dot */}
-      <div className="absolute left-2 top-4 w-3 h-3 bg-primary rounded-full border-2 border-card shadow-lg z-10 animate-float">
-        <div className="absolute inset-0.5 bg-primary/60 rounded-full animate-pulse-subtle"></div>
-        <div className="absolute inset-1 bg-card rounded-full"></div>
-      </div>
-
       {/* Card */}
-      <div className="ml-8 mb-6">
-        <div className="group bg-card backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border card-hover shadow-lg hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
+      <div className="mb-6 flex justify-center sm:justify-start">
+        <div className="group bg-card backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border card-hover shadow-lg hover:shadow-2xl hover:border-primary/30 transition-all duration-500 w-full max-w-md sm:max-w-full">
           {/* Header */}
           <div className="text-left mb-3 sm:mb-4">
-            <div className="flex items-start gap-3 mb-2 sm:mb-3">
+            <div className="flex flex-wrap items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
+              {/* Icon */}
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md">
                 <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-primary transition-colors duration-300" />
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base sm:text-xl md:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-all duration-500 text-glow">
+
+              {/* Title + Company */}
+              <div className="flex-1 min-w-[150px]">
+                <h3 className="text-sm sm:text-base md:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-all duration-500 text-glow">
                   {title}
                 </h3>
-                <p className="text-s sm:text-sm text-primary font-semibold group-hover:opacity-80 transition-opacity duration-300">
+                <p className="text-xs sm:text-sm text-primary font-semibold group-hover:opacity-80 transition-opacity duration-300">
                   @{company}
                 </p>
               </div>
-              <div className="cosmic-button text-xs px-2 py-1 sm:px-3 sm:py-1.5">{type}</div>
+
+              {/* Type Badge */}
+              <div className="cosmic-button text-[10px] sm:text-xs px-2 py-1 sm:px-3 sm:py-1.5 mt-2 sm:mt-0">
+                {type}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70">
+
+            {/* Bottom Section */}
+            <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-foreground/70 mt-2">
               <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                 <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-medium">{year}</span>
@@ -105,7 +108,7 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
             ))}
           </div>
 
-          {/* Achievements toggle */}
+          {/* Achievements Toggle */}
           <button
             onClick={() => setShowAchievements(!showAchievements)}
             className="flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-xs sm:text-sm font-medium group/btn hover:bg-primary/5 px-2 sm:px-3 py-1.5 rounded-lg hover:scale-105"
@@ -119,7 +122,7 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
             )}
           </button>
 
-          {/* Achievements list */}
+          {/* Achievements List */}
           <div
             className={`overflow-hidden transition-all duration-700 ease-out ${
               showAchievements ? 'max-h-96 opacity-100 mt-3 sm:mt-4' : 'max-h-0 opacity-0'
@@ -198,8 +201,6 @@ export const JourneySection = () => {
       <div className="absolute bottom-12 sm:bottom-20 left-8 sm:left-20 w-16 sm:w-24 h-16 sm:h-24 bg-primary/10 rounded-full blur-xl animate-pulse-subtle"></div>
       <div className="absolute top-1/2 left-1/4 w-12 sm:w-16 h-12 sm:h-16 bg-primary/5 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
 
-    
-
       <div className="container mx-auto">
         {/* Header */}
         <div
@@ -215,34 +216,26 @@ export const JourneySection = () => {
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-2 top-0 bottom-8 w-0.5 bg-primary/60 shadow-lg">
-            <div className="absolute inset-0 bg-primary/40 blur-sm animate-pulse-subtle"></div>
-          </div>
+        {/* Experience cards */}
+        {experiences.map((experience, index) => (
+          <ExperienceCard key={index} {...experience} index={index} />
+        ))}
 
-          {/* Experience cards */}
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} {...experience} index={index} />
-          ))}
-
-          {/* Timeline end */}
-          <div className="absolute left-2 bottom-0 w-3 h-3 bg-primary rounded-full border-2 border-card shadow-lg animate-pulse-subtle">
-            <div className="absolute inset-0 bg-primary/60 rounded-full animate-float"></div>
-          </div>
+        {/* Timeline end dot */}
+        <div className="absolute left-1/2 sm:left-2 bottom-0 -translate-x-1/2 sm:translate-x-0 w-3 h-3 bg-primary rounded-full border-2 border-card shadow-lg animate-pulse-subtle">
+          <div className="absolute inset-0 bg-primary/60 rounded-full animate-float"></div>
         </div>
+      </div>
 
-        {/* CTA */}
-        <div
-          className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${
-            sectionVisible ? 'animate-fade-in-delay-2' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="inline-flex items-center gap-2 sm:gap-3 cosmic-button group cursor-pointer text-xs sm:text-sm md:text-base lg:text-lg">
-            <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
-            <span>Ready for new opportunities</span>
-          </div>
+      {/* CTA */}
+      <div
+        className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-500 ${
+          sectionVisible ? 'animate-fade-in-delay-2' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <div className="inline-flex items-center gap-2 sm:gap-3 cosmic-button group cursor-pointer text-xs sm:text-sm md:text-base lg:text-lg">
+          <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
+          <span>Ready for new opportunities</span>
         </div>
       </div>
     </section>
