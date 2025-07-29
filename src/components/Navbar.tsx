@@ -187,7 +187,7 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out",
+          "top-0 left-0 w-full z-50 transition-all duration-500 ease-out",
           isScrolled 
             ? isDarkMode 
               ? "py-2 sm:py-3 bg-gray-900/20 backdrop-blur-xl border-b border-gray-700/30 shadow-2xl shadow-black/30"

@@ -103,7 +103,6 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 2rem;
 
   @media (width >= 640px) {
     max-width: 640px;
@@ -152,6 +151,10 @@
 @utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
