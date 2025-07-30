@@ -133,7 +133,7 @@ const ExperienceCard = ({ title, company, year, location, type, description, ski
                 <Star className="w-4 h-4 sm:w-5 sm:h-5 text-primary animate-pulse-subtle" />
                 <h4 className="text-foreground font-semibold text-xs sm:text-sm">Key Achievements</h4>
               </div>
-              <ul className="space-y-2 sm:space-y-3">
+              <ul className="text-left space-y-2 sm:space-y-3">
                 {achievements.map((achievement, achievementIndex) => (
                   <li
                     key={achievementIndex}
